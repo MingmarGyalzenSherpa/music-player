@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+}
+
+.card {
+  width: 400px;
+  height: 600px;
+
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.music-header {
+  margin-top: 20px;
+  border: 1px solid red;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.music-img {
+  margin-top: 30px;
+  border: 1px solid green;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-img-container {
+  position: relative;
+  width: 70%;
+  border: none;
+  height: 90%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.music-img-container::after {
+  content: "";
+  background-color: rgb(212, 199, 199);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.music-info {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.track-title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.track-artist {
+  font-size: 12px;
+}
+
+.progress-container {
+  margin: 20px 10px 0 10px;
+  height: 2px;
+  background-color: rgb(164, 156, 156);
+}
+
+.progress {
+  height: 100%;
+  width: 1%;
+  background-color: black;
+}
+
+.music-key {
+  border: 1px solid yellow;
+  margin-top: 30px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.navigation {
+  border: 1px solid red;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.action-btn {
+  padding: 5px;
+  background: transparent;
+  border: 1px solid blue;
+  width: 40px;
+  height: 40px;
+}
+
+.action-btn-big {
+  width: 60px;
+  height: 50px;
+}
