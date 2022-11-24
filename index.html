@@ -16,13 +16,14 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="card">
+    <audio class="music-audio" src="./songs/lalisa.mp3"></audio>
+    <div class="music-container">
       <div class="music-header">
         <span>Now Playing</span>
       </div>
-      <div class="music-img">
+      <div class="music-img-section">
         <div class="music-img-container">
-          <img src="./img/person.jpg" alt="" />
+          <img class="music-img" src="./img/person.jpg" alt="" />
         </div>
       </div>
 
@@ -31,14 +32,14 @@
         <span class="track-artist">John Legend</span>
       </div>
 
-      <div class="progress-container">
+      <div class="progress-bar">
         <div class="progress"></div>
       </div>
       <div class="navigation">
         <button id="prev" class="action-btn">
           <i class="fas fa-backward"></i>
         </button>
-        <button id="play" class="action-btn action-btn-big">
+        <button id="play-pause" class="action-btn action-btn-big">
           <i class="fas fa-play"></i>
         </button>
         <button id="next" class="action-btn">

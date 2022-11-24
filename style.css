@@ -18,7 +18,7 @@ body {
   background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }
 
-.card {
+.music-container {
   width: 400px;
   height: 600px;
 
@@ -29,15 +29,15 @@ body {
 
 .music-header {
   margin-top: 20px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 10px 0;
   text-align: center;
   font-weight: 500;
 }
 
-.music-img {
+.music-img-section {
   margin-top: 30px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   height: 300px;
   display: flex;
   justify-content: center;
@@ -65,17 +65,33 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translate(-50%, -50%);
 }
 
 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: rotate 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.music-container.play .music-img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .music-info {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,44 +107,43 @@ img {
   font-size: 12px;
 }
 
-.progress-container {
+.progress-bar {
   margin: 20px 10px 0 10px;
-  height: 2px;
-  background-color: rgb(164, 156, 156);
+  height: 4px;
+  background-color: rgb(180, 183, 240);
 }
 
 .progress {
   height: 100%;
-  width: 1%;
-  background-color: black;
-}
-
-.music-key {
-  border: 1px solid yellow;
-  margin-top: 30px;
-  display: flex;
-  gap: 5px;
-  justify-content: center;
+  width: 0%;
+  background-color: rgb(79, 153, 250);
+  transition: width 0.1s linear;
 }
 
 .navigation {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 30px;
 }
 
 .action-btn {
   padding: 5px;
   background: transparent;
-  border: 1px solid blue;
-  width: 40px;
-  height: 40px;
+  border: none;
+  color: #403d40;
+  font-size: 20px;
+  /* border: 1px solid red; */
+  cursor: pointer;
 }
 
 .action-btn-big {
-  width: 60px;
-  height: 50px;
+  font-size: 30px;
+  color: rgb(70, 67, 67);
+}
+
+.action-btn:hover {
+  color: #8ec5fc;
 }
