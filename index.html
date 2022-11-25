@@ -16,14 +16,14 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <audio class="music-audio" src="./songs/lalisa.mp3"></audio>
+    <audio class="music-audio" src="./songs/brown munde.mp3"></audio>
     <div class="music-container">
       <div class="music-header">
         <span>Now Playing</span>
       </div>
       <div class="music-img-section">
         <div class="music-img-container">
-          <img class="music-img" src="./img/person.jpg" alt="" />
+          <img class="music-img" src="./img/brown munde.jpg" alt="" />
         </div>
       </div>
 
@@ -35,15 +35,23 @@
       <div class="progress-bar">
         <div class="progress"></div>
       </div>
-      <div class="navigation">
-        <button id="prev" class="action-btn">
-          <i class="fas fa-backward"></i>
+      <div class="controls">
+        <button id="shuffle" class="action-btn">
+          <i class="fas fa-shuffle"></i>
         </button>
-        <button id="play-pause" class="action-btn action-btn-big">
-          <i class="fas fa-play"></i>
-        </button>
-        <button id="next" class="action-btn">
-          <i class="fas fa-forward"></i>
+        <div class="navigation">
+          <button id="prev" class="action-btn">
+            <i class="fas fa-backward"></i>
+          </button>
+          <button id="play-pause" class="action-btn action-btn-big">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next" class="action-btn">
+            <i class="fas fa-forward"></i>
+          </button>
+        </div>
+        <button id="repeat" class="action-btn">
+          <i class="fas fa-repeat"></i>
         </button>
       </div>
     </div>
