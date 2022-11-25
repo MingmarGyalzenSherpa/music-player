@@ -7,6 +7,8 @@ const musicArtist = document.querySelector(".track-artist");
 const musicAudio = document.querySelector(".music-audio");
 const progress = document.querySelector(".progress");
 const progressBar = document.querySelector(".progress-bar");
+const curTime = document.querySelector(".cur-time");
+const duration = document.querySelector(".duration-time");
 const prevBtn = document.querySelector("#prev");
 const playPauseBtn = document.querySelector("#play-pause");
 const nextBtn = document.querySelector("#next");
@@ -17,14 +19,15 @@ const musics = [
   { title: "brown munde", artist: "AP DHILLON" },
   { title: "lalisa", artist: "LISA" },
   { title: "lisa money", artist: "LISA" },
-  { title: "escort", artist: "bhalu" },
+  { title: "Zehn kleine Jägermeister", artist: "Die Toten Hosen" },
 ];
 
 let songIndex;
 let isPlaying;
 let repeat = false;
 let shuffle = false;
-
+let currentTime = {};
+let durationTime = {};
 //generate random index
 function generateRandomIndex() {
   const index = Math.floor(Math.random() * musics.length);
@@ -37,16 +40,19 @@ function musicChange(music) {
   musicArtist.textContent = music.artist.toUpperCase();
   musicImg.src = `./img/${music.title}.jpg`;
   musicAudio.src = `./songs/${music.title}.mp3`;
-  progressUpdate();
 }
 
-function progressUpdate() {
-  musicAudio.ontimeupdate = (e) => {
-    let perc = (musicAudio.currentTime / musicAudio.duration) * 100;
-
-    progress.style.width = `${perc}%`;
-  };
-}
+musicAudio.ontimeupdate = (e) => {
+  let perc = (musicAudio.currentTime / musicAudio.duration) * 100;
+  console.log(musicAudio.duration);
+  console.log("perc = " + perc);
+  progress.style.width = `${perc}%`;
+  currentTime.min = Math.floor(musicAudio.currentTime / 60);
+  currentTime.sec = Math.floor(musicAudio.currentTime % 60);
+  currentTime.sec =
+    currentTime.sec > 9 ? currentTime.sec : "0" + currentTime.sec;
+  curTime.textContent = `${currentTime.min}:${currentTime.sec}`;
+};
 
 function progressReset() {
   progress.style.width = "0%";
@@ -120,8 +126,6 @@ shuffleBtn.addEventListener("click", function (e) {
     shuffle = false;
     shuffleBtn.style.color = "#7a70dc";
   }
-
-  //   console.log(shuffle);
 });
 
 repeatBtn.addEventListener("click", function () {
@@ -132,6 +136,15 @@ repeatBtn.addEventListener("click", function () {
     repeatBtn.style.color = "#352e73";
     repeat = true;
   }
+});
+
+progressBar.addEventListener("click", function (e) {
+  // console.log(e.offsetX);
+  let perc = (e.offsetX / 380) * 100;
+  // console.log(perc);
+  let curTime = (perc / 100) * musicAudio.duration;
+  musicAudio.currentTime = curTime;
+  // console.log(curTime);
 });
 
 function init() {
