@@ -52,7 +52,7 @@ function musicChange(music) {
     durationTime.sec =
       durationTime.sec > 9 ? durationTime.sec : "0" + durationTime.sec;
     duration.textContent = `${durationTime.min}:${durationTime.sec}`;
-  }, 10);
+  }, 1000);
 }
 
 musicAudio.ontimeupdate = (e) => {
