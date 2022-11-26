@@ -16,11 +16,25 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <audio class="music-audio" src="./songs/brown munde.mp3"></audio>
+    <audio
+      class="music-audio"
+      src="./songs/brown munde.mp3"
+      preload="metadata"
+    ></audio>
     <div class="music-container">
       <div class="music-header">
         <span>Now Playing</span>
       </div>
+      <div class="volume-section">
+        <div class="volume-bar">
+          <div class="volume"></div>
+        </div>
+        <button id="volume" class="action-btn">
+          <i class="fas fa-volume-up vol-ico"></i>
+          <i class="fas hide fa-volume-xmark vol-ico"></i>
+        </button>
+      </div>
+
       <div class="music-img-section">
         <div class="music-img-container">
           <img class="music-img" src="./img/brown munde.jpg" alt="" />
@@ -36,8 +50,8 @@
         <div class="progress"></div>
       </div>
       <div class="time-container">
-        <span class="cur-time">1:22</span>
-        <span class="duration-time">2:22</span>
+        <span class="cur-time"></span>
+        <span class="duration-time"></span>
       </div>
       <div class="controls">
         <button id="shuffle" class="action-btn">
